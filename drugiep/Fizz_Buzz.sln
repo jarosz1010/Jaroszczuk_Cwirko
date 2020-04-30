@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "main_function", "drugiep\main_function.csproj", "{D70D4CC2-A981-4400-BE90-B375D4892B41}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test_prog", "test_prog\test_prog.csproj", "{483456AB-87D4-410D-9A73-9D6B31E9A349}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D70D4CC2-A981-4400-BE90-B375D4892B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70D4CC2-A981-4400-BE90-B375D4892B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70D4CC2-A981-4400-BE90-B375D4892B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70D4CC2-A981-4400-BE90-B375D4892B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{483456AB-87D4-410D-9A73-9D6B31E9A349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483456AB-87D4-410D-9A73-9D6B31E9A349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483456AB-87D4-410D-9A73-9D6B31E9A349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483456AB-87D4-410D-9A73-9D6B31E9A349}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14E00F3C-3DD1-41CB-8FD1-F36C27642C8C}
+	EndGlobalSection
+EndGlobal

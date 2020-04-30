@@ -1,0 +1,11 @@
+C:\Users\Michał\source\repos\drugiep\drugiep\bin\Debug\netcoreapp2.1\drugiep.deps.json
+C:\Users\Michał\source\repos\drugiep\drugiep\bin\Debug\netcoreapp2.1\drugiep.runtimeconfig.json
+C:\Users\Michał\source\repos\drugiep\drugiep\bin\Debug\netcoreapp2.1\drugiep.runtimeconfig.dev.json
+C:\Users\Michał\source\repos\drugiep\drugiep\bin\Debug\netcoreapp2.1\drugiep.dll
+C:\Users\Michał\source\repos\drugiep\drugiep\bin\Debug\netcoreapp2.1\drugiep.pdb
+C:\Users\Michał\source\repos\drugiep\drugiep\obj\Debug\netcoreapp2.1\drugiep.csproj.CoreCompileInputs.cache
+C:\Users\Michał\source\repos\drugiep\drugiep\obj\Debug\netcoreapp2.1\drugiep.AssemblyInfoInputs.cache
+C:\Users\Michał\source\repos\drugiep\drugiep\obj\Debug\netcoreapp2.1\drugiep.AssemblyInfo.cs
+C:\Users\Michał\source\repos\drugiep\drugiep\obj\Debug\netcoreapp2.1\drugiep.dll
+C:\Users\Michał\source\repos\drugiep\drugiep\obj\Debug\netcoreapp2.1\drugiep.pdb
+C:\Users\Michał\source\repos\drugiep\drugiep\obj\Debug\netcoreapp2.1\drugiep.csprojAssemblyReference.cache

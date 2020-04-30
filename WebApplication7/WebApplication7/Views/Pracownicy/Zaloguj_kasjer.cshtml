@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Zaloguj_kasjer</title>
+</head>
+<body>
+    Witaj kasjerze
+
+    <input type="text" id="st" value="Stacja" /> <br />
+
+    <input type="button" value="Sprawdz polaczenie" onclick="location.href='@Url.Action("Zwroc_stacje", "Polaczenia")?stacja=' + document.getElementById('st').value" />
+   ,br/>
+    <input type="button" value="Dodaj klienta" onclick="location.href='@Url.Action("Create", "Kupujacys")'" />
+
+</body>
+</html>
