@@ -1,17 +1,29 @@
-﻿
-
-@{
-    ViewData["Title"] = "witaj";
+﻿@{
+    ViewData["Title"] = "Strona domowa";
 }
-Dzien dobry!
-Podaj Login i Haslo
-<br/>
-<input type="text" id="log" value="Login"> <br /> <br/>
-<input type="text" id="has" value="Haslo" /> <br/>
+<!DOCTYPE html>
 
-<input type="button" value="Zaloguj" onclick="location.href='@Url.Action("Zaloguj_admin", "Pracownicy")?login=' + document.getElementById('log').value + '&haslo=' 
-       + document.getElementById('has').value" />
+<html lang="pl">
 
+<head>
+    <meta charset="utf-8" />
+    <link href="~/css/Index.css" rel="stylesheet" type="text/css">
+    <meta name="description" content="Przed Tobą spis" />
+</head>
+<body>
+    <div id="conteiner">
+        <div id="logowanie">
+            Logowanie
+        </div>
+        <form>
+            <input type="text" id="log" value="Login">
+            <br /><br />
+            <input type="text" id="has" value="Haslo" />
+            <br /><br />
+            <input type="button" value="Zaloguj" onclick="location.href='@Url.Action("Zaloguj_admin", "Pracownicy")?login=' + document.getElementById('log').value + '&haslo='
+                    + document.getElementById('has').value" />
+        </form>
+    </div>
 
-
-
+</body>
+</html>
