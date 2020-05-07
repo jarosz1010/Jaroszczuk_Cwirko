@@ -42,6 +42,14 @@ namespace WebApplication7.Controllers
             return View(kupujacy);
         }
 
+        public async Task<IActionResult> Znajdz_klienta(string klient)
+        {
+
+            return View(await _context.Kupujacys
+        .Where(e => e.Nazwisko == klient)
+        .ToListAsync());
+
+        }
         // GET: Kupujacys/Create
         public IActionResult Create()
         {

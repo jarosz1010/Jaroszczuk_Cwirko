@@ -9,7 +9,8 @@ namespace WebApplication7.Models
     {
         public int Id { get; set; }
         public string Stacja { get; set; }
-        public DateTime Godzina { get; set; }
+        public string Godzina { get; set; }
         public int Ilosc_miejsc {get; set;}
+        public int Kolejnosc { get; set; }
     }
 }

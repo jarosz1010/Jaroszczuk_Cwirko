@@ -11,13 +11,15 @@
     <title>Zaloguj_kasjer</title>
 </head>
 <body>
-    Witaj kasjerze
+    Witaj kasjerze <br />
 
-    <input type="text" id="st" value="Stacja" /> <br />
+    <input type="text" id="st_p" value="Stacja poczatkowa" /> <br />
+    <input type="text" id="st_k" value="Stacja koncowa" /> <br />
+    <input type="text" id="data" value="Data odjazdu" /> <br />
 
-    <input type="button" value="Sprawdz polaczenie" onclick="location.href='@Url.Action("Zwroc_stacje", "Polaczenia")?stacja=' + document.getElementById('st').value" />
-   ,br/>
-    <input type="button" value="Dodaj klienta" onclick="location.href='@Url.Action("Create", "Kupujacys")'" />
+    <input type="button" value="Sprawdz polaczenie" onclick="location.href='@Url.Action("Zwroc_stacje", "Polaczenia")?stacja_p=' + document.getElementById('st_p').value +'&data='
+                    + document.getElementById('data').value" />
+    <br />
 
 </body>
 </html>

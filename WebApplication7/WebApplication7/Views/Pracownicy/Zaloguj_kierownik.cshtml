@@ -12,5 +12,9 @@
 </head>
 <body>
     Czesc kierowniku
+    <input type="text" id="nazw" value="Nazwisko klienta" /> <br />
+    <input type="button" value="Znajdz klienta" onclick="location.href='@Url.Action("Znajdz_klienta","Kupujacys")?klient=' + document.getElementById('nazw').value" /> <br />
+    <input type="button" value="Pokaz wszystkich" onclick="location.href='@Url.Action("Index","Kupujacys")'" /> <br />
+
 </body>
 </html>

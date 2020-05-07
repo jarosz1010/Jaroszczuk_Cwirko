@@ -27,11 +27,18 @@ namespace WebApplication7.Controllers
             return View(await _context.Trasa.ToListAsync());
         }
         // Do zwracania danych stacji
-        public async Task<IActionResult> Zwroc_stacje(string stacja)
+        public async Task<IActionResult> Zwroc_stacje(string stacja_p, string stacja_k, string data)
         {
-           
+            var sp = await _context.Trasa
+                  .FirstOrDefaultAsync(m => m.Stacja == stacja_p);
+
+            var sk = await _context.Trasa
+                 .FirstOrDefaultAsync(m => m.Stacja == stacja_k);
+            //int sk_kol = sk.Kolejnosc;
+
+            // tutaj poprawic
             return View(await _context.Trasa
-        .Where(e => e.Stacja == stacja)
+        .Where(e => e.Kolejnosc >= sp.Kolejnosc && e.Kolejnosc < 10 && e.Godzina == data)
         .ToListAsync());
 
         }
@@ -70,7 +77,7 @@ namespace WebApplication7.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Stacja,Godzina,Ilosc_miejsc")] Polaczenie polaczenie)
+        public async Task<IActionResult> Create([Bind("Id,Stacja,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +109,7 @@ namespace WebApplication7.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,Godzina,Ilosc_miejsc")] Polaczenie polaczenie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
         {
             if (id != polaczenie.Id)
             {
