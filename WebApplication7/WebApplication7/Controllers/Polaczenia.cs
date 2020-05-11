@@ -79,7 +79,7 @@ namespace WebApplication7.Controllers
    
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Stacja,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
+        public async Task<IActionResult> Create([Bind("Id,Stacja,E,N,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +110,7 @@ namespace WebApplication7.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,N,E,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
         {
             if (id != polaczenie.Id)
             {
