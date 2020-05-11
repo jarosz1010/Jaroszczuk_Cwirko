@@ -21,7 +21,7 @@ namespace WebApplication7.Models
 
         public DbSet<WebApplication7.Models.Polaczenie> Trasa { get; set; }
 
-        public DbSet<WebApplication7.Models.Transakcja> Transakcja { get; set; }
+     
 
        
     }

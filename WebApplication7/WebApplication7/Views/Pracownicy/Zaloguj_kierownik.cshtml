@@ -8,13 +8,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Kierownik.css" rel="stylesheet" type="text/css">
+
     <title>Zaloguj_kierownik</title>
 </head>
 <body>
-    Czesc kierowniku
-    <input type="text" id="nazw" value="Nazwisko klienta" /> <br />
-    <input type="button" value="Znajdz klienta" onclick="location.href='@Url.Action("Znajdz_klienta","Kupujacys")?klient=' + document.getElementById('nazw').value" /> <br />
-    <input type="button" value="Pokaz wszystkich" onclick="location.href='@Url.Action("Index","Kupujacys")'" /> <br />
-
+    <div id="conteiner">
+        <div id="logowanie">
+            Witaj kierowniku
+        </div>
+        <input type="text" id="nazw" value="Nazwisko klienta" /> <br />
+        <input type="button" value="Znajdz klienta" onclick="location.href='@Url.Action("Znajdz_klienta","Kupujacys")?klient=' + document.getElementById('nazw').value" /> <br />
+        <input type="button" value="Pokaz wszystkich" onclick="location.href='@Url.Action("Index","Kupujacys")'" /> <br />
+        </div>
 </body>
 </html>

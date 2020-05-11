@@ -8,18 +8,22 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Kasjer.css" rel="stylesheet" type="text/css">
     <title>Zaloguj_kasjer</title>
 </head>
 <body>
-    Witaj kasjerze <br />
 
-    <input type="text" id="st_p" value="Stacja poczatkowa" /> <br />
-    <input type="text" id="st_k" value="Stacja koncowa" /> <br />
-    <input type="text" id="data" value="Data odjazdu" /> <br />
+    <div id="conteiner">
+        <div id="logowanie">
+          Witaj kasjerze
+        </div>
+        <input type="text" id="st_p" value="Stacja poczatkowa" /> <br />
+        <input type="text" id="st_k" value="Stacja koncowa" /> <br />
+        <input type="text" id="data" value="Data odjazdu" /> <br />
 
-    <input type="button" value="Sprawdz polaczenie" onclick="location.href='@Url.Action("Zwroc_stacje", "Polaczenia")?stacja_p=' + document.getElementById('st_p').value +'&data='
+        <input type="button" value="Sprawdz polaczenie" onclick="location.href='@Url.Action("Zwroc_stacje", "Polaczenia")?stacja_p=' + document.getElementById('st_p').value +'&data='
                     + document.getElementById('data').value" />
-    <br />
-
+        <br />
+        </div>
 </body>
 </html>

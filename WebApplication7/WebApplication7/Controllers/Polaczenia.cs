@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using WebApplication7.Models;
 
 namespace WebApplication7.Controllers
@@ -15,10 +16,11 @@ namespace WebApplication7.Controllers
     public class Polaczenia : Controller
     {
         private readonly WebApplication7Context _context;
-
-        public Polaczenia(WebApplication7Context context)
+        private readonly ILogger _logger;
+        public Polaczenia(WebApplication7Context context, ILogger<Pracownicy> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Polaczenia
@@ -37,14 +39,16 @@ namespace WebApplication7.Controllers
             //int sk_kol = sk.Kolejnosc;
 
             // tutaj poprawic
+            _logger.LogInformation("Znaleziono szukane stacje!");
             return View(await _context.Trasa
         .Where(e => e.Kolejnosc >= sp.Kolejnosc && e.Kolejnosc < 10 && e.Godzina == data)
         .ToListAsync());
-
+        
         }
 
         public async Task<IActionResult> Mapy()
         {
+            _logger.LogInformation("Ktos otworzyl mapy");
             return View();
         }
 
@@ -72,9 +76,7 @@ namespace WebApplication7.Controllers
             return View();
         }
 
-        // POST: Polaczenia/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+   
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Stacja,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)

@@ -8,11 +8,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Dyrektor.css" rel="stylesheet" type="text/css">
     <title>Zaloguj_dyrektor</title>
 </head>
 <body>
-    Serwus dyrektorze
-    <input type="button" value="Pracownicy" onclick="location.href='@Url.Action("Index", "Pracownicy")'" />
-
+    <div id="conteiner">
+        <div id="logowanie">
+            Serwus dyrektorze
+        </div>
+        <input type="button" value="Pracownicy" onclick="location.href='@Url.Action("Index", "Pracownicy")'" />
+        </div>
 </body>
 </html>

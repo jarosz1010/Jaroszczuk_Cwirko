@@ -36,7 +36,9 @@ namespace WebApplication7.Controllers
             
             if (login == null || haslo == null)
             {
-                return NotFound();
+                _logger.LogInformation("Wpisano zly login lub brakuje");
+                return View("Halo");
+               
             }
            
                 var pracownik = await _context.Pracownik
@@ -44,26 +46,31 @@ namespace WebApplication7.Controllers
 
                 if (pracownik == null)
                 {
-                    return NotFound();
-                }
+                return View("Halo");
+            }
                 // Sprawdzamy poprawnosc hasla
                 if (pracownik.Haslo != haslo)
                 {
-                   return View("Halo");
+                _logger.LogInformation("Wpisano zle haslo");
+
+                return View("Halo");
                 }
                 if(pracownik.Stanowisko == "Dyrektor")
                 {
+                _logger.LogInformation("Użytkownik przeszedł na ekran dyrektora!");
                 return View("Zaloguj_dyrektor");
                 }
             else if (pracownik.Stanowisko == "Kierownik")
             {
+                _logger.LogInformation("Użytkownik przeszedł na ekran kierownika!");
                 return View("Zaloguj_kierownik");
             }
             else if (pracownik.Stanowisko == "Kasjer")
             {
+                _logger.LogDebug("Użytkownik przeszedł na ekran kasjera!");
                 return View("Zaloguj_kasjer");
             }
-            _logger.LogDebug("DEBUG: użytkownik przeszedł na ekran admina!");
+            _logger.LogInformation("Użytkownik przeszedł na ekran admina!");
             return View(); 
         }
 
@@ -81,6 +88,7 @@ namespace WebApplication7.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pracownik == null)
             {
+                _logger.LogInformation("Przy wyszukiwaniu nie znaleziono pracownika");
                 return NotFound();
             }
 

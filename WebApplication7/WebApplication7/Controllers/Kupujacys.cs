@@ -42,6 +42,7 @@ namespace WebApplication7.Controllers
             return View(kupujacy);
         }
 
+        
         public async Task<IActionResult> Znajdz_klienta(string klient)
         {
 
