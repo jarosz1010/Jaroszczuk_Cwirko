@@ -81,6 +81,7 @@ namespace WebApplication7.Controllers
         {
             if (id == null)
             {
+                _logger.LogInformation("Brakuje ID");
                 return NotFound();
             }
 
@@ -101,9 +102,6 @@ namespace WebApplication7.Controllers
             return View();
         }
 
-        // POST: Pracownicy/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Imie,Nazwisko,Login,Haslo,Stanowisko, PESEL")] Pracownik pracownik)
@@ -133,9 +131,6 @@ namespace WebApplication7.Controllers
             return View(pracownik);
         }
 
-        // POST: Pracownicy/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Imie,Nazwisko,Login,Haslo,Stanowisko,PESEL")] Pracownik pracownik)

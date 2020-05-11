@@ -18,11 +18,11 @@ using WebApplication7.Models;
 namespace WebApplication7.Tests
 {
     public class Pracownicy_tests
-    {/*
+    {
         [Fact]
         public void Index_Test()
         {
-            var mockrepo1 = new Mock<WebApplication7Context>();//Brak bezparametrycznego konstruktora - dostepny konstruktor nie moze byc bezposrednio uzywany
+            var mockrepo1 = new Mock<WebApplication7Context>() ;//Brak bezparametrycznego konstruktora - dostepny konstruktor nie moze byc bezposrednio uzywany
             var mockrepo2 = new Mock<ILogger<Pracownicy>>();
             //  mockrepo1.Object.Pracownik.ToListAsync();
 
@@ -32,22 +32,10 @@ namespace WebApplication7.Tests
 
             Assert.IsType<ViewResult>(result);
         }
-        */
-        /*
-        [Fact]
-        public void drugi_Test()
-        {
-            var mockrepo1 = new Mock<WebApplication7Context>();//Brak bezparametrycznego konstruktora - dostepny konstruktor nie moze byc bezposrednio uzywany
-            
-
-            var controller = new Kupujacys(mockrepo1.Object);
-
-            var result = controller.GetName(1);
-
-            Assert.Equal("Nowak", result);
-        }
-        */
-        /*
+        
+       
+      /*
+        
         [Fact]
         public void Zaloguj_Admin_Tests()
         {

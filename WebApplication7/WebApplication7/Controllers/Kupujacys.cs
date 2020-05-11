@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+
 using WebApplication7.Models;
 
 namespace WebApplication7.Controllers
@@ -12,10 +15,11 @@ namespace WebApplication7.Controllers
     public class Kupujacys : Controller
     {
         private readonly WebApplication7Context _context;
-
-        public Kupujacys(WebApplication7Context context)
+        private readonly ILogger _logger;
+        public Kupujacys(WebApplication7Context context, ILogger<Kupujacys> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Kupujacys
@@ -36,6 +40,7 @@ namespace WebApplication7.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (kupujacy == null)
             {
+                _logger.LogInformation("Nie ma takiego kupujacego");
                 return NotFound();
             }
 
@@ -57,9 +62,7 @@ namespace WebApplication7.Controllers
             return View();
         }
 
-        // POST: Kupujacys/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+  
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Imie,Nazwisko,Znizka")] Kupujacy kupujacy)
@@ -68,6 +71,7 @@ namespace WebApplication7.Controllers
             {
                 _context.Add(kupujacy);
                 await _context.SaveChangesAsync();
+                _logger.LogInformation("Stworzono klienta");
                 return RedirectToAction(nameof(Index));
             }
             return View(kupujacy);
@@ -84,14 +88,13 @@ namespace WebApplication7.Controllers
             var kupujacy = await _context.Kupujacys.FindAsync(id);
             if (kupujacy == null)
             {
+                _logger.LogInformation("Nie ma takiego kupujacego");
                 return NotFound();
             }
             return View(kupujacy);
         }
 
-        // POST: Kupujacys/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Imie,Nazwisko,Znizka")] Kupujacy kupujacy)

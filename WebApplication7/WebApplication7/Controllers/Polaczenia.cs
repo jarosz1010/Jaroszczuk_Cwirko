@@ -17,7 +17,7 @@ namespace WebApplication7.Controllers
     {
         private readonly WebApplication7Context _context;
         private readonly ILogger _logger;
-        public Polaczenia(WebApplication7Context context, ILogger<Pracownicy> logger)
+        public Polaczenia(WebApplication7Context context, ILogger<Polaczenia> logger)
         {
             _context = context;
             _logger = logger;
@@ -85,8 +85,10 @@ namespace WebApplication7.Controllers
             {
                 _context.Add(polaczenie);
                 await _context.SaveChangesAsync();
+                _logger.LogInformation("Utworzono nowa stacje");
                 return RedirectToAction(nameof(Index));
             }
+
             return View(polaczenie);
         }
 
@@ -106,9 +108,6 @@ namespace WebApplication7.Controllers
             return View(polaczenie);
         }
 
-        // POST: Polaczenia/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
