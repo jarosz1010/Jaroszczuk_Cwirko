@@ -17,7 +17,12 @@ namespace WebApplication7.Migrations
                 nullable: true,
                 oldClrType: typeof(DateTime));
 
-     
+            migrationBuilder.AlterColumn<int>(
+               name: "Kolejnosc",
+               table: "Trasa",
+               nullable: true,
+               oldClrType: typeof(int));
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
