@@ -41,7 +41,7 @@ namespace WebApplication7.Controllers
             // tutaj poprawic
             _logger.LogInformation("Znaleziono szukane stacje!");
             return View(await _context.Trasa
-        .Where(e => e.Kolejnosc >= sp.Kolejnosc && e.Kolejnosc < 10 && e.Godzina == data)
+        .Where(e =>  e.Godzina == data)
         .ToListAsync());
         
         }
@@ -79,7 +79,7 @@ namespace WebApplication7.Controllers
    
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Stacja,E,N,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
+        public async Task<IActionResult> Create([Bind("Id,Stacja,E,N,Godzina,Ilosc_miejsc")] Polaczenie polaczenie)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +110,7 @@ namespace WebApplication7.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,N,E,Godzina,Ilosc_miejsc,Kolejnosc")] Polaczenie polaczenie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Stacja,N,E,Godzina,Ilosc_miejsc")] Polaczenie polaczenie)
         {
             if (id != polaczenie.Id)
             {
